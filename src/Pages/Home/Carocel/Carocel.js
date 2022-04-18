@@ -18,8 +18,8 @@ const Carocel = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Change Your Goal</h3>
+                        <p>Every New Year, fitness clubs see a HUGE increase in enrollment. .</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className='carosetItem'>
@@ -30,8 +30,8 @@ const Carocel = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Go Foorword</h3>
+                        <p>The biggest struggle for fitness clubs is keeping customers on the right track. You may already be offering personal coaching</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className='carosetItem'>
@@ -42,8 +42,8 @@ const Carocel = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3>Your Change is biggest motivation</h3>
+                        <p>Motivated by the desire to get fit or lose weight, thousands of people flock to gyms</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
