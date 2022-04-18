@@ -11,7 +11,7 @@ const SingleServices = ({ service }) => {
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title className='text-center'>{name}</Card.Title>
-                    <Card.Text className='m-0 '> {description}.</Card.Text>
+                    <Card.Text className='m-0'> {description}.</Card.Text>
                     <Card.Text className=''> <b> From :${Price}  / day..</b></Card.Text>
                     <div className='w-50 mx-auto'>
                         <Button variant="primary singleSrButton">Go somewhere</Button>
