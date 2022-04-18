@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import auth from '../../firebase.init'
 import "./Register.css"
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import GooglelLogin from '../GoogleLogin/GooglelLogin'
 
 
 const Register = () => {
@@ -55,7 +56,7 @@ const Register = () => {
                         Sign Up
                     </Button>
                 </div>
-
+                <GooglelLogin></GooglelLogin>
             </Form>
         </div>
     )
