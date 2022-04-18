@@ -1,32 +1,25 @@
-import React from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import CustomHook from '../CustomHook/CustomHook'
 import Show from '../ShowSingleShop/Show'
 import "./ShopDetails.css"
 
 const ShopDetails = () => {
-
-    const services = CustomHook("services.json")
-    console.log(services)
-
     const navigate = useNavigate()
-    const { id } = useParams()
+
+
+    const handlechekout = () => {
+        navigate("/checkout")
+    }
+
 
     return (
-        <div className='mt-5' style={{ height: "100vh" }}>
-            <h2>Hello for the {id}</h2>
-            <button onClick={() => navigate("/checkout")} className='btn btn-dark'>Checkout</button>
-            {
-                services.map(service =>
-                    <Show
-                        key={service.id}
-                        service={service}
-                    ></Show>
-
-                )
-            }
+        <div className='mx-auto' style={{ height: "100vh" }}>
+            <div style={{ margin: "200px" }} className='mx-auto w-100'>
+                <h2 className='text-center text-success'>Please Checkout Your Course...</h2>
+                <button onClick={() => handlechekout()} className='btn btn-dark mx-auto d-flex'>Checkout</button>
+            </div>
         </div>
     )
 }
-
 export default ShopDetails

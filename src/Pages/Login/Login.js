@@ -5,11 +5,13 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../firebase.init'
 import GooglelLogin from '../GoogleLogin/GooglelLogin'
 import "./Login.css"
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Login = () => {
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth)
-
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth)
+
     const emailRef = useRef("")
     const passwordRef = useRef("")
     const navigate = useNavigate()
@@ -22,6 +24,7 @@ const Login = () => {
             navigate(from, { replace: true })
         }
     }, [from, navigate, user])
+
 
 
 
@@ -49,9 +52,14 @@ const Login = () => {
     }
 
     const handleResetPassword = async () => {
+        const notify = () => toast("Email reset password !!!!")
         const email = emailRef.current.value
         await sendPasswordResetEmail(email)
+        notify()
     }
+
+
+
 
     return (
         <div>
@@ -73,7 +81,7 @@ const Login = () => {
                             <span className='fw-bolder text-white'>Login</span>
                         </Button>
                     </div>
-                    <span onClick={() => handleResetPassword()} className='text-end d-block text-success ' role="button" >Forget Password ?</span>
+                    <span onClick={() => handleResetPassword()} className='text-end d-block text-success ' role="button" >Forget Password ?</span>< ToastContainer />
                     {errorElement}
                     <GooglelLogin></GooglelLogin>
                 </Form>

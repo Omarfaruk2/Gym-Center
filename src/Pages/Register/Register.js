@@ -1,7 +1,7 @@
 
-import React, { useRef } from 'react'
+import { React, useEffect, useRef } from 'react'
 import { Form, Button, Spinner } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../firebase.init'
 import "./Register.css"
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
@@ -14,6 +14,18 @@ const Register = () => {
     const emailRef = useRef("")
     const nameRef = useRef("")
     const passwordRef = useRef("")
+    const navigate = useNavigate()
+
+    let location = useLocation()
+    let from = location?.state?.from?.pathname || "/"
+
+    useEffect(() => {
+
+        if (user) {
+            navigate(from, { replace: true })
+        }
+
+    }, [from, navigate, user])
 
     if (loading) {
         return (
@@ -32,8 +44,6 @@ const Register = () => {
         const email = emailRef.current.value
         const password = passwordRef.current.value
         await createUserWithEmailAndPassword(email, password)
-        // await sendEmailVerification();
-
 
     }
     return (

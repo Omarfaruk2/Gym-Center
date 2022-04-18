@@ -6,8 +6,6 @@ import "./Services.css"
 const Services = () => {
 
     const services = CustomHook("services.json")
-
-
     return (
         <div id='sevices' className='bg-light'>
             <h2 className='text-center text-primary pt-5 fw-bold'>Services</h2>
