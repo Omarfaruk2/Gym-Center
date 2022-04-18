@@ -1,0 +1,8 @@
+.card {
+    width: "100%";
+    height: "100%";
+    /* backgroundImage: "url(" + { Background } + ")" */
+    /* background-image: "url("+"{carImg3}"+")"; */
+    backgroundImage: "url("+ carImg3 + ")"
+
+}

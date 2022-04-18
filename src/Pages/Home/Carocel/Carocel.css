@@ -1,0 +1,10 @@
+.carosetItem img {
+    opacity: .8;
+}
+
+.btn {
+    width: "100%";
+    height: "400px";
+    /* backgroundImage: "url(" + { Background } + ")" */
+    background-image: "url("+"{carImg3}"+")";
+}
