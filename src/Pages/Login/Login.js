@@ -67,7 +67,7 @@ const Login = () => {
                 <Form onSubmit={handleLoginSubmit} className='login mx-auto mb-5'>
                     <h3 className='text-center fw-bold'>LOGIN</h3>
                     <Form.Group className="mb-3 fromInput" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>Email Address</Form.Label>
                         {/* <input type="email" name="" id="" /> */}
                         <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                     </Form.Group>
