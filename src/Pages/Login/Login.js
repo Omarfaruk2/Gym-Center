@@ -1,12 +1,14 @@
 import React, { useRef } from 'react'
 import { Button, Form, Spinner } from 'react-bootstrap'
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import { Link } from 'react-router-dom'
 import auth from '../../firebase.init'
 import GooglelLogin from '../GoogleLogin/GooglelLogin'
 import "./Login.css"
 
 const Login = () => {
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth)
+
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth)
     const emailRef = useRef("")
     const passwordRef = useRef("")
@@ -34,6 +36,10 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
     }
 
+    const handleResetPassword = async () => {
+        const email = emailRef.current.value
+        await sendPasswordResetEmail(email)
+    }
 
     return (
         <div>
@@ -55,6 +61,7 @@ const Login = () => {
                             <span className='fw-bolder text-white'>Login</span>
                         </Button>
                     </div>
+                    <span onClick={() => handleResetPassword()} className='text-end d-block text-success ' role="button" >Forget Password ?</span>
                     {errorElement}
                     <GooglelLogin></GooglelLogin>
                 </Form>
