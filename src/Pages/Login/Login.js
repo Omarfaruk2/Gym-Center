@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import { React, useEffect, useRef } from 'react'
 import { Button, Form, Spinner } from 'react-bootstrap'
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../firebase.init'
 import GooglelLogin from '../GoogleLogin/GooglelLogin'
 import "./Login.css"
@@ -12,6 +12,18 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth)
     const emailRef = useRef("")
     const passwordRef = useRef("")
+    const navigate = useNavigate()
+
+    let location = useLocation()
+    let from = location.state?.from?.pathname || "/"
+
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true })
+        }
+    }, [from, navigate, user])
+
+
 
     if (loading) {
         return (

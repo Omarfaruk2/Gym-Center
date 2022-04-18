@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./GoogleLogin.css"
 import googlelogo from "../../logo/googlelo.png"
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import auth from '../../firebase.init'
+import { useLocation, useNavigate, Navigate } from 'react-router-dom'
 
 const GooglelLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth)
+    // console.log(user)
+    const navigate = useNavigate()
+
+    let location = useLocation()
+    let from = location.state?.from?.pathname || "/"
+
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true })
+        }
+    }, [from, navigate, user])
+
 
     return (
         <div>

@@ -16,7 +16,7 @@ const Header = () => {
         <>
             <Navbar collapseOnSelect className='py-3 sticky-top' expand="lg" bg="info" variant="dark">
                 <Container >
-                    <Navbar.Brand className='text-white ' href="home#home"> <h3>Dynamo Fitness</h3></Navbar.Brand>
+                    <Navbar.Brand className='text-white' href="home#home"> <h3>Dynamo Fitness</h3></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto d-flex align-items-center">

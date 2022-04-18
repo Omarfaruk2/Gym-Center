@@ -10,3 +10,15 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
+
+.imgcontainer {
+    overflow: hidden;
+    position: relative;
+}
+
+.imghover:hover {
+    background-color: rgba(172, 163, 143, 0.5);
+    transform: scale(1.5);
+    opacity: 0.7;
+    transition: transform 1.5s ease-in-out;
+}

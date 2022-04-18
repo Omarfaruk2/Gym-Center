@@ -3,7 +3,7 @@ import "./Blogs.css"
 
 const Blogs = () => {
     return (
-        <div >
+        <div style={{ height: "50vh" }}>
             <h2>This is Blogs...</h2>
         </div>
     )
