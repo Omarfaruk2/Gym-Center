@@ -13,7 +13,7 @@ const SingleServices = ({ service }) => {
     }
 
     return (
-        <div className='col-lg-4 g-2 p-3 mb-4'>
+        <div data-aos="zoom-out-up" className='col-lg-4 g-2 p-3 mb-4'>
             <Card className='p-3 singleCard'>
                 <div className='imgcontainer'>
                     <Card.Img className='imghover' variant="top" src={img} />
@@ -21,7 +21,7 @@ const SingleServices = ({ service }) => {
                 <Card.Body>
                     <Card.Title className='text-center'>{name}</Card.Title>
                     <Card.Text className='m-0'> {description}.</Card.Text>
-                    <Card.Text className=''> <b> Price :${Price}  / day..</b></Card.Text>
+                    <Card.Text className=''> <b> Price: ${Price}  / day..</b></Card.Text>
                     <div className='w-50 mx-auto'>
                         <Button onClick={() => handleNavigateDetails(id)} variant="primary singleSrButton">Go somewhere</Button>
                     </div>
